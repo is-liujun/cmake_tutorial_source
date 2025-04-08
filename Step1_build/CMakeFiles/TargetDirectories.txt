@@ -1,0 +1,3 @@
+/home/jliu/cmake_tutorial_source/Step1_build/CMakeFiles/tutorialApp.dir
+/home/jliu/cmake_tutorial_source/Step1_build/CMakeFiles/edit_cache.dir
+/home/jliu/cmake_tutorial_source/Step1_build/CMakeFiles/rebuild_cache.dir
