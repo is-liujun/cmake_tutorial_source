@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 project(Tutorial VERSION 21.2)
-add_subdirectory(MathFunctions)
 add_executable(tutorialApp tutorial.cxx)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -11,6 +10,7 @@ configure_file(TutorialConfig.h.in TutorialConfig.h)
 option(USE_MYMATH "control sqrt algorithm" TRUE)
 
 if(USE_MYMATH)
+    add_subdirectory(MathFunctions)
     list(APPEND EXTRA_LIBS MathFunctions)
     list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
 endif()
