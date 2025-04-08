@@ -8,7 +8,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
+option(USE_MYMATH "control sqrt algorithm" TRUE)
 
-target_link_libraries(tutorialApp PUBLIC MathFunctions)
-target_include_directories(tutorialApp PUBLIC ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR}/MathFunctions)
+if(USE_MYMATH)
+    list(APPEND EXTRA_LIBS MathFunctions)
+    list(APPEND EXTRA_INCLUDES "${PROJECT_SOURCE_DIR}/MathFunctions")
+endif()
+
+target_link_libraries(tutorialApp PUBLIC ${EXTRA_LIBS})
+target_include_directories(tutorialApp PUBLIC ${PROJECT_BINARY_DIR} ${EXTRA_INCLUDES})
 
