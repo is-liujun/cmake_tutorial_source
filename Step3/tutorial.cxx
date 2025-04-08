@@ -3,8 +3,11 @@
 #include <iostream>
 #include <string>
 
-#include "MathFunctions.h"
 #include "TutorialConfig.h"
+
+#ifdef USE_MYMATH
+#include "MathFunctions.h"
+#endif
 
 int main(int argc, char* argv[])
 {
@@ -19,7 +22,13 @@ int main(int argc, char* argv[])
   // convert input to double
   const double inputValue = std::stod(argv[1]);
 
+#ifdef USE_MYMATH
   const double outputValue = mathfunctions::sqrt(inputValue);
+#endif
+
+#ifndef USE_MYMATH
+  const double outputValue = std::sqrt(inputValue);
+#endif
 
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
