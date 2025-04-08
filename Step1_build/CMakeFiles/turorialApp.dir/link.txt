@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/turorialApp.dir/tutorial.cxx.o -o turorialApp 
